@@ -9,7 +9,9 @@ function App() {
       <header className="App-header">
         NoteTaker
       </header>
-      <div class = 'categories'>
+      {
+        note_categories.length === 0 ? <p>No sticky notes yet.</p> : 
+        <div class = 'categories'>
         {
           note_categories.map((category) => 
             <div class = 'category'>
@@ -18,7 +20,8 @@ function App() {
             </div>
           )
         }
-      </div>
+        </div>
+      }
     </div>
   );
 }
