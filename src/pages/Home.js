@@ -1,14 +1,20 @@
 import "./Home.css";
 import Img_note from "../images/note1.png";
+import IAMService from "../IAMService";
 
 const note_categories = ["Ray", "sasha", "tide", "test", "gasgasgmksgmaskgmkamgka", "more"];
 
 function Home() {
   return (
-    <div className="App">
-      <header className="App-header">
-        NoteTaker
-      </header>
+    <div>
+      <div class = "topBar">
+        <header className = "appName">
+          NoteTaker
+        </header>
+        <button class = "logoutBtn" onClick = {() => IAMService.doLogout()}> 
+          Logout
+        </button>
+      </div>
       {
         note_categories.length === 0 ? <p>No sticky notes yet.</p> : 
         <div class = "categories">

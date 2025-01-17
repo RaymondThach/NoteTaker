@@ -2,11 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Home from "./pages/Home";
-import { createRoot } from "react-dom/client";
 import IAMService from "./IAMService";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-//const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //Unprotected route
 const RenderOnAnonymous = ({ children }) => (!IAMService.isLoggedIn() ? children : null);
@@ -38,6 +35,7 @@ const GoToTide = () => IAMService.doLogin();
 //   </div>
 // );
 
+//Unprotected route to Login form if not authenticated, Protected route to Home if authenticated.
 const App = () => (
   <BrowserRouter>
     <RenderOnAnonymous>
@@ -51,14 +49,8 @@ const App = () => (
   </BrowserRouter>
 );
 
-const renderApp = () => ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+//Render the notetaker app into the root element of index.html
+const renderApp = () => ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
 
 //Initiate TideCloak adapter over the notetaker app
 IAMService.initIAM(renderApp);
-
-
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
