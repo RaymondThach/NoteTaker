@@ -13,7 +13,7 @@
   color: white;
 } */
 
-.categories {
+/* .categories {
   margin: 1%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -38,4 +38,4 @@
   overflow: hidden;
   overflow-wrap: break-word;
   font-size: 25px;
-}
+} */
