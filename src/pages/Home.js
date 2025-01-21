@@ -46,6 +46,7 @@ function Home() {
     }
   }
 
+  //Create a note with note name and the note input
   async function createNote() {
     await fetch('http://localhost:8000/notes/createNote', {
         method: 'post',
@@ -58,6 +59,7 @@ function Home() {
     });
   }
 
+  //Delete a not using its ID
   async function deleteNote(id) {
     await fetch(`http://localhost:8000/notes/deleteNote/${id}`, {
       method: 'delete',
